@@ -1,0 +1,40 @@
+{
+  "files": {
+    "main.css": "/chagas/static/css/main.1cb6f0bc.css",
+    "main.js": "/chagas/static/js/main.995e539e.js",
+    "static/js/453.8f0cede6.chunk.js": "/chagas/static/js/453.8f0cede6.chunk.js",
+    "static/media/5.jpg": "/chagas/static/media/5.3433615958ab0d43ffa4.jpg",
+    "static/media/2.jpg": "/chagas/static/media/2.8ef54e1eba645d623145.jpg",
+    "static/media/3.jpg": "/chagas/static/media/3.e27a402cd8f084f1ca8a.jpg",
+    "static/media/6.jpg": "/chagas/static/media/6.54c7d5a04f575a3b96ae.jpg",
+    "static/media/1.jpg": "/chagas/static/media/1.0a11335cbc455eea2a0f.jpg",
+    "static/media/4.jpg": "/chagas/static/media/4.fe81bcf769f6bd32de24.jpg",
+    "static/media/fa-solid-900.ttf": "/chagas/static/media/fa-solid-900.4a2cd718d7031b732e76.ttf",
+    "static/media/fa-brands-400.ttf": "/chagas/static/media/fa-brands-400.150de8eaa454d669c405.ttf",
+    "static/media/fa-solid-900.woff2": "/chagas/static/media/fa-solid-900.bb975c966c37455a1bc3.woff2",
+    "static/media/fa-brands-400.woff2": "/chagas/static/media/fa-brands-400.e033a13ee751afc1860c.woff2",
+    "static/media/fa-regular-400.ttf": "/chagas/static/media/fa-regular-400.d87474231f4192884802.ttf",
+    "static/media/sedes.png": "/chagas/static/media/sedes.b59a928ca2d410dcaeee.png",
+    "static/media/fondo_inicio.jpg": "/chagas/static/media/fondo_inicio.289f9d9b50c4f9e63bf9.jpg",
+    "static/media/nucleo.eot": "/chagas/static/media/nucleo.bd5cce8bf40be5947637.eot",
+    "static/media/nucleo.ttf": "/chagas/static/media/nucleo.35b08447277ca7bf9f09.ttf",
+    "static/media/map.png": "/chagas/static/media/map.c8a6093e1177cbf3c8b2.png",
+    "static/media/fa-regular-400.woff2": "/chagas/static/media/fa-regular-400.3223dc79c1adee56370b.woff2",
+    "static/media/alemania.png": "/chagas/static/media/alemania.007df5e97001634e4962.png",
+    "static/media/norsud.png": "/chagas/static/media/norsud.6003cfdac487a2dfe35d.png",
+    "static/media/nucleo.woff": "/chagas/static/media/nucleo.5c65ef4d6434bb8062a3.woff",
+    "static/media/react-logo.png": "/chagas/static/media/react-logo.e6eab154a1986e8b0c7c.png",
+    "static/media/nucleo.woff2": "/chagas/static/media/nucleo.6dfb4833e3a0132fd1fc.woff2",
+    "static/media/dahw.png": "/chagas/static/media/dahw.a469d28b718b27d9eef5.png",
+    "static/media/fa-v4compatibility.ttf": "/chagas/static/media/fa-v4compatibility.0e3a648be390bd8cb094.ttf",
+    "static/media/fa-v4compatibility.woff2": "/chagas/static/media/fa-v4compatibility.68577e40f3e70067b5da.woff2",
+    "index.html": "/chagas/index.html",
+    "main.1cb6f0bc.css.map": "/chagas/static/css/main.1cb6f0bc.css.map",
+    "main.995e539e.js.map": "/chagas/static/js/main.995e539e.js.map",
+    "453.8f0cede6.chunk.js.map": "/chagas/static/js/453.8f0cede6.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1cb6f0bc.css",
+    "static/js/main.995e539e.js"
+  ]
+}
