@@ -141,7 +141,7 @@ module.exports = class EE1 {
 
         from casa where comunidad = ${pool.escape(datos.comunidad)}`
         const [rowsCasa] = await pool.query(sqlCasa)
-        const [mes] = await pool.query(`select num from mes where ${pool.escape(datos.id_mes)}`)
+        const [mes] = await pool.query(`select num from mes where id = ${pool.escape(datos.id_mes)}`)
         const sqlEstructura = `select h.id as id_hospital, h.nombre as nombre_hospital, r.id as id_red, r.nombre as nombre_red
 
                 from comunidad c
@@ -223,7 +223,7 @@ module.exports = class EE1 {
         
                         FROM ee1 e
                         inner join casa cs on cs.id = e.casa
-                        where e.id_mes = ${pool.escape(datos.id_mes)}`)
+                        where e.id_mes = ${pool.escape(datos.id_mes)} and e.comunidad = ${pool.escape(datos.comunidad)}`)
 
                         let total = 0
                         for (let e of rowsIds) {

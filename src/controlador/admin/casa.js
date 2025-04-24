@@ -94,7 +94,7 @@ rutas.post("/guardar", insertar, async (req, res) => {
                 num_hab: numero_habitaciones, habitantes: numero_habitantes,
                 cv: numero_control_vectorial, creating: fecha_, user_creating: user
             }
-            const resultado = await casa.insertar(datos)
+            const resultado = await casa.insertar(datos) 
             if (resultado === -1) {
                 return res.json({ ok: false, msg: 'Esta coordenada ya esta registrada' })
             }
@@ -186,7 +186,7 @@ rutas.post("/eliminar", eliminar, async (req, res) => {
             return res.json({ ok: true, msg: 'Registro eliminado correctamete' })
         }
     } catch (error) {
-        // console.log(error)
+        console.log(error)
         if (error.sqlState === '23000')
             return res.json({ error: 500, msg: 'La vivienda se encuentra asociado a una evaluacion, laboratorio o actividad de rociado...' });
         else return res.json({ error: 500, msg: error.sqlMessage + '. Puede existir valores dependientes a este registro. COnsulte con el administrador' });

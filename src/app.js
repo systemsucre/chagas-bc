@@ -23,6 +23,11 @@ app.use(cors());
 app.disable("x-powered-by"); // evita que el atacante sepa que
 //ejecutamos express js como servidor
 // app.use(rutas);
+app.use(express.static(__dirname + "/build"));
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, "../front/build", "index.html"))
+})
 app.use('/server_chagas',ruta) 
 
 app.listen(app.get("puerto"), () => {

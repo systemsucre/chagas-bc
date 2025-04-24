@@ -103,7 +103,7 @@ module.exports = class EE2 {
                 
                 e.id_gestion,e.id_mes,
 
-                cs.altitud, cs.latitud, cs.longitud, 
+                cs.altitud, cs.latitud as longitud, cs.longitud as latitud, 
                 e.negativa, e.cerrada, e.renuente, 
                 DATE_FORMAT(e.created_at, "%Y/%m/%d" ) as fecha, e.author
 
@@ -168,7 +168,7 @@ module.exports = class EE2 {
                 sum(e.lcipd) as lcipd, sum(e.lcicm) as lcicm, sum(e.lcith) as lcith, sum(e. lciot) as lciot , sum(e.lcppd) as lcppd,
                 sum(e.lcpga) as lcpga, sum(e.lcpcl) as lcpcl, sum(e.lcpcj) as lcpcj, sum(e.lcpz) as lcpz, sum(e.lcpot) as lcpot,
                 
-                cs.altitud, cs.latitud, cs.longitud,  e.author
+                cs.altitud, cs.latitud as longitud, cs.longitud as latitud,  e.author
 
 
 

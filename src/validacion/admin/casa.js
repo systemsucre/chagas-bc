@@ -6,7 +6,7 @@ const insertar = [
 
     check('comunidad')
         .matches(/^\d{1,10}$/,)
-        .exists(),
+        .optional({ nullable: true }),
     check('longitud')
         .matches(/^[0-9.-]{1,40}$/)
         .exists(),
@@ -46,7 +46,7 @@ const editar = [
         .exists().isNumeric(),
     check('comunidad')
         .matches(/^\d{1,10}$/,)
-        .exists(),
+        .optional({ nullable: true }),
     check('vmIntra')
         .matches(/^[01]{1,40}$/)
         .exists(),

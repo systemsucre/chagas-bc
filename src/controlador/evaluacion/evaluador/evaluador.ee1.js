@@ -32,7 +32,7 @@ rutas.post("/listar-meses", async (req, res) => {
 rutas.post("/filtrar-evaluaciones-viviendas", async (req, res) => { 
     try {
         const resultado = await ee1.filtarEvaluacionesViviendas(req.body.gestion, req.body.user, req.body.sidcomunidad)
-        console.log(resultado, 'dashboard')
+        // console.log(resultado, 'dashboard')
 
         return res.json({ data: resultado, ok: true })
     } catch (error) {
@@ -57,7 +57,7 @@ rutas.post("/listar-casas", async (req, res) => {
 
 
 rutas.post("/guardar", insertar, async (req, res) => {
-    // console.log('guardar evaluador ee1', req.body)
+    console.log('guardar evaluador ee1', req.body.id_mes)
 
     try {
         let {

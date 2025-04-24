@@ -24,8 +24,9 @@ module.exports = class Casa {
                 inner join hospital h on h.id = c.est
                 inner join municipio m on m.id = h.municipio
                  ${datos.rol == 40 ? `where c.id = ${pool.escape(datos.comunidad)}` : datos.rol == 2 || datos.rol == 3 ? ` where m.id = ${pool.escape(datos.municipio)}` : ''}
-                order by  CAST(cs.cv AS INT) asc LIMIT 100`;
+                order by  c.id, CAST(cs.cv AS INT) asc LIMIT 100`;
 
+        // console.log(sql)
         const [rows] = await pool.query(sql)
         return rows
     }
@@ -39,7 +40,7 @@ module.exports = class Casa {
                 inner join comunidad c on c.id = cs.comunidad
                 inner join hospital h on h.id = c.est
                 inner join municipio m on m.id = h.municipio
-            where  cs.comunidad =${pool.escape(dato.comunidad)} ${dato.rol == 2 || dato.rol == 3 ?` and m.id = ${pool.escape(dato.municipio)}`:''} order by CAST(cs.cv AS INT) asc `;
+            where  cs.comunidad =${pool.escape(dato.comunidad)} ${dato.rol == 2 || dato.rol == 3 ? ` and m.id = ${pool.escape(dato.municipio)}` : ''} order by CAST(cs.cv AS INT) asc `;
         const [rows] = await pool.query(sql)
         return rows
     }

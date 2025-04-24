@@ -82,6 +82,7 @@ module.exports = class Estratificado {
                 group by e.codigo
                 order by e.id  desc`;
 
+                // console.log('datos de es')
         const [rows] = await pool.query(sql)
 
         const sqlOtros =

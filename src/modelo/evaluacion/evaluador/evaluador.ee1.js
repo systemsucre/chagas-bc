@@ -110,7 +110,7 @@ module.exports = class EE1 {
     insertar = async (datos) => {
 
 
-        const [mes] = await pool.query(`select num from mes where ${pool.escape(datos.id_mes)}`)
+        const [mes] = await pool.query(`select num from mes where id = ${pool.escape(datos.id_mes)}`)
         const sqlEstructura = `select h.id as id_hospital, h.nombre as nombre_hospital, r.id as id_red, r.nombre as nombre_red
 
                 from comunidad c
@@ -169,7 +169,7 @@ module.exports = class EE1 {
 
                     if (result[0].affectedRows > 0) {
                         let num_casas = rowsCasa[0].cantidad
-                        const [rowsIds] = await pool.query(`SELECT  e.id,  
+                        const [rowsIds] = await pool.query(`SELECT  e.id,   
                     
                         COUNT(cs.id) AS viv_existentes,         
                         ${pool.escape(num_casas)} as num_viviendas_actual,
@@ -197,12 +197,16 @@ module.exports = class EE1 {
         
                         FROM ee1 e
                         inner join casa cs on cs.id = e.casa
-                        where e.id_mes = ${pool.escape(datos.id_mes)}`)
+                        where e.id_mes = ${pool.escape(datos.id_mes)} and e.comunidad = ${pool.escape(datos.comunidad)}`)
+                        
 
+                        // console.log(rowsIds, datos.id_mes)
                         let total = 0
                         for (let e of rowsIds) {
                             total = (e.viv_pos >= 1 ? 1 :
-                                e.viv_pos < 1 ? 0 : 0) + (e.pos_ninfas_intra >= 1 ? 1 :
+                                e.viv_pos < 1 ? 0 : 0) 
+                                
+                                + (e.pos_ninfas_intra >= 1 ? 1 :
                                     e.pos_ninfas_intra < 1 ? 0 : 0) + (
                                     e.iii > e.iip ? 1 :
                                         e.iii < e.iip ? 0 : 0
@@ -210,6 +214,8 @@ module.exports = class EE1 {
                                     e.iii > 3 && e.iii <= 7 ? 2 :
                                         e.iii > 7 ? 3 : null)
                         }
+                        // console.log(total, ' riesgo comunidad')
+
                         await pool.query(`update casa set riesgo = ${pool.escape(total)} where comunidad = ${pool.escape(datos.comunidad)}`)
                     }
                     return true
@@ -223,7 +229,7 @@ module.exports = class EE1 {
 
 
     deleted = async (evaluacion, user, username, fecha) => {
-        const [result_recover] = await pool.query(`select * from rociado WHERE id = ${pool.escape(rociado)}`);
+        const [result_recover] = await pool.query(`select * from ee1 WHERE id = ${pool.escape(evaluacion)}`);
         const sql = `delete from ee1 where id = ${pool.escape(evaluacion)} and usuario = ${pool.escape(user)}`
         const [result] = await pool.query(sql)
         if (result.affectedRows > 0) {
